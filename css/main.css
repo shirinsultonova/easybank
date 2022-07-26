@@ -26,6 +26,13 @@
 * Browsers: last 4 version
 */
 
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
 
 /* public-sans-100 - latin */
 @font-face {
@@ -155,29 +162,32 @@ font-size: 14px;
 line-height: 16px;
 letter-spacing: -0.107692px;
 color: #9597A5;
+border-bottom: 4px solid transparent;
 position: relative;
 padding: 32px 0;
-
-
+-webkit-transition: 0.3s ease;
+-o-transition: 0.3s ease;
+transition: 0.3s ease;
 
 }
-.nav__link::before{
+.nav__link::after{
 content: "";
 position: absolute;
 left: 0;
 bottom: 0;
-width: 0%;
+width: 100%;
 height: 4px;
--webkit-transition: all 0.3s linear;
--o-transition: all 0.3s linear;
-transition: all 0.3s linear;
+display: none;
+background-image: -o-linear-gradient(315deg, #33D35E 0%, #2AB6D9 99.58%);
+background-image: linear-gradient(135deg, #33D35E 0%, #2AB6D9 99.58%);
+
 }
 .nav__link:hover{
   color: #2D314D;
+  
 }
-.nav__link:hover::before{
-width: 100%;
-border-bottom: 4px solid #33D35E;
+.nav__link:hover::after{
+display: block;
 }
 .site-link{
   font-weight: 500;
